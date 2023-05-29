@@ -6,66 +6,62 @@ function addRow() {
     row.className = "row";
 
     var fixName = document.createElement("label");
-    fixName.textContent = "Fix Name ";
-    fixName.style.marginRight = "10px";
+    fixName.textContent = "Fix";
 
     var fixNameInput = document.createElement("input");
     fixNameInput.type = "text";
-    fixNameInput.style.marginBottom = "10px";
     fixNameInput.id = "fixName";
     fixNameInput.title = "Fix Name";
     fixNameInput.value = "?????";
 
     var mitValueLabel = document.createElement("label");
-    mitValueLabel.textContent = "MIT Value ";
-    mitValueLabel.style.marginRight = "10px";
+    mitValueLabel.textContent = "MIT";
 
     var mitValueInput = document.createElement("input");
     mitValueInput.type = "text";
     mitValueInput.id = "mitValue";
     mitValueInput.className = "mitValue";
-    mitValueInput.style.marginBottom = "10px";
     mitValueInput.addEventListener("input", calculateRate);
     mitValueInput.value = "0";
     mitValueInput.title = "Miles-In-Trail Value";
 
     var speedCheckbox = document.createElement("input");
     speedCheckbox.type = "checkbox";
-    speedCheckbox.title = "Speed at the fix?";    
-    speedCheckbox.style.marginBottom = "10px";
+    speedCheckbox.title = "Speed?";
     speedCheckbox.id = "speedCheckbox";
     speedCheckbox.className = "speedCheckbox";
+    
     speedCheckbox.addEventListener("input", calculateRate);
 
     // Create remove button
     var removeButton = document.createElement("button");
-    removeButton.textContent = "Remove";
-    removeButton.onclick = function() {
-      container.removeChild(row);
+    removeButton.textContent = "X";
+    removeButton.title = "Remove Fix"
+    removeButton.onclick = function () {
+        container.removeChild(row);
     };
     removeButton.id = "removeButton";
 
     // Create text for checkbox
     var speedLabel = document.createElement("label");
-    speedLabel.textContent = "Speed at the fix?";
-    speedLabel.style.marginRight = "10px";
+    speedLabel.textContent = "Speed?";
 
     // Append label, input, and remove button to the row
+    row.appendChild(removeButton);
     row.appendChild(fixName);
     row.appendChild(fixNameInput);
     row.appendChild(mitValueLabel);
-    row.appendChild(mitValueInput);    
+    row.appendChild(mitValueInput);
     row.appendChild(document.createElement("br"));
     row.appendChild(speedLabel);
     row.appendChild(speedCheckbox);
-    row.appendChild(document.createElement("br"));
-    row.appendChild(removeButton);
+    
 
     // Append the row to the container
     container.appendChild(row);
-  }
+}
 
-  function calculateRate() {
+function calculateRate() {
     var container = document.getElementById("container");
     var rows = container.children;
     var values = [];
