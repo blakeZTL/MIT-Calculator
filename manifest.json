@@ -1,0 +1,17 @@
+{
+    "lang": "en-us",
+    "name": "Miles-In-Trail Calculator",
+    "short_name": "MIT Calculator",
+    "description": "A basic miles-in-trail calculator to help fix balancing to called aiport rates.",
+    "start_url": "/",
+    "background_color": "#2f3d58",
+    "theme_color": "#2f3d58",
+    "orientation": "any",
+    "display": "standalone",
+    "icons": [
+        {
+            "src": "/tmuCalcImg.png",
+            "sizes": "200x200"
+        }
+    ]
+}

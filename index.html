@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>MIT Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="tmuCalcImg.png">
+</head>
+
+<body>
+    <h1>MIT Calculator</h1>
+    <h3 id="calcRate">Calculated Rate: 0</h3>
+
+    <div id="container">
+        <!-- Initial row of controls -->
+        <div class="row">
+            <label style="margin-right: 10px;">Fix Name</label>
+            <input id="fixName" type="text" title="Fix Name" value="?????">
+            <label style="margin-right: 10px;">MIT Value</label>
+            <input id="mitValue" type="text" class="mitValue" style="margin-bottom: 10px;" title="Miles-In-Trail Value" value="0">
+            <br>
+            <label style="margin-right: 10px;">Speed at the fix?</label>
+            <input id="speedCheckbox" class="speedCheckbox" type="checkbox" title="Speed at the fix?" value="Speed?">
+        </div>
+    </div>
+
+    <!-- Button to add new rows -->
+    <button onclick="addRow()">Add Fix</button>
+
+    <!--
+    <br><br><br><br>
+    <button onclick="calculateRate()">Calculate</button>
+    -->
+
+    <script src="script.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js', { scope: '/' });
+        }
+    </script>
+    <script>
+        var mitValue = document.getElementById("mitValue");
+        mitValue.addEventListener("input", calculateRate);
+
+        var speedCheckbox = document.getElementById("speedCheckbox");
+        speedCheckbox.addEventListener("input", calculateRate);
+    </script>
+</body>
+
+</html>
