@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>MIT Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="tmuCalcImg.png">
+</head>
+
+<body>
+    <h1>MIT Calculator</h1>
+    <h3 id="calcRate">Calculated Rate: 0</h3>
+
+    <div id="container">
+        <!-- Initial row of controls -->
+        <div class="row">
+            <label style="margin-left: 35px;">Fix</label>
+            <input id="fixName" type="text" title="Fix Name" value="?????">
+            <label title="MIT Value">MIT</label>
+            <input id="mitValue" type="text" class="mitValue" title="Miles-In-Trail Value" value="0">
+            <br>
+            <label>Speed?</label>
+            <input id="speedCheckbox" class="speedCheckbox" type="checkbox" title="Speed at the fix?" value="Speed?">
+        </div>
+    </div>
+
+    <!-- Button to add new rows -->
+    <button id="addFixButton" onclick="addRow()">Add Fix</button>
+
+    <script src="script.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js', { scope: '/' });
+        }
+    </script>
+    <script>
+        var mitValue = document.getElementById("mitValue");
+        mitValue.addEventListener("input", calculateRate);
+
+        var speedCheckbox = document.getElementById("speedCheckbox");
+        speedCheckbox.addEventListener("input", calculateRate);
+    </script>
+    <!--Firebase-->
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyDyQ08CKoYJtsu-XEHJ4QKXSlGdrpWWjZE",
+            authDomain: "mit-calculator.firebaseapp.com",
+            projectId: "mit-calculator",
+            storageBucket: "mit-calculator.appspot.com",
+            messagingSenderId: "54198602571",
+            appId: "1:54198602571:web:c985c6d9e357df4b2576ce",
+            measurementId: "G-R112M7FQ38"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+    </script>
+</body>
+
+</html>
