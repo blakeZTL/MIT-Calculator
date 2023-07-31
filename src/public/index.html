@@ -10,9 +10,11 @@
   </head>
   <body>
     <h1>Mile-In-Trail Calculator</h1>
-    <div class="AddFix">
-      <button id="add_fix" class="AddFixButton">Add Fix</button>
+    <div class="Rate">
+      <h2 id="rate_label">Calculated Rate:</h2>
+      <h2 id="rate_value">0</h2>
     </div>
+
     <div class="Headings">
       <div class="ValueLabels">
         <h3 id="fix_label">Fix Name</h3>
@@ -27,7 +29,11 @@
           <input type="text" class="FixInput" placeholder="Name of Fix" />
         </div>
         <div class="MitInfo">
-          <select class="Miles" onchange="GatherData()">
+          <select
+            title="Mile-In-Trail Dropdown"
+            class="Miles"
+            onchange="GatherData()"
+          >
             <option value="0">0</option>
             <option value="5">5</option>
             <option value="10">10</option>
@@ -77,9 +83,9 @@
         </button>
       </div>
     </div>
-    <div class="Rate">
-      <h2 id="rate_label">Calculated Rate:</h2>
-      <h2 id="rate_value">0</h2>
+    <div class="AddFix">
+      <button type="button" id="add_fix" class="AddFixButton">Add Fix</button>
+      <button type="button" id="reset_cards" class="ResetCards">Reset</button>
     </div>
     <script>
       if ('serviceWorker' in navigator) {
