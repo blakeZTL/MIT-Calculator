@@ -21,28 +21,10 @@ body {
   margin: 0;
   flex-direction: column;
 }
-.Headings {
-  display: flex;
-  width: 480px;
-  overflow: hidden;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 10px 5px 10px;
-  margin-top: 5px;
-}
-.ValueLabels {
-  display: grid;
-  grid-template-rows: 20px;
-  grid-template-columns: 2fr 1fr 2fr;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin: 0;
-}
 
 .container {
   display: flex;
-  width: 480px;
+  width: 350px;
   height: auto;
   background-color: #fff;
   border-radius: 10px;
@@ -51,17 +33,38 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 10px 0;
   margin-top: 5px;
 }
-
+.ValueLabels {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+}
+#fix_label,
+.FixInfo {
+  flex-basis: 100px;
+}
+#mit_label,
+.MitInfo {
+  flex-basis: 20px;
+}
+#speed_label,
+.SpeedInfo {
+  flex-basis: 100px;
+}
+#remove_label {
+  flex-basis: 20px;
+}
 .card {
-  display: grid;
-  grid-template-rows: 40px;
-  grid-template-columns: 3fr 2fr 3fr 1fr;
-  justify-content: center;
+  display: flex;
+  justify-content: space-around;
   align-items: center;
   max-height: 200px;
+  width: 100%;
+  margin-top: 10px;
 }
 h3 {
   font-size: 14px;
@@ -72,54 +75,22 @@ h3 {
   color: #333;
   height: fit-content;
 }
-#fix_label {
-  display: grid;
-  grid-area: 1 1 1 1;
-  padding: 0 10px;
-  width: 100%;
-}
-.FixInfo {
-  display: grid;
-  grid-area: 1 1 1 1;
-  padding: 0 10px;
-}
 .FixInput {
   height: 20px;
   font-weight: 300;
   font-family: inherit;
   text-align: center;
   text-transform: uppercase;
-}
-#mit_label {
-  display: grid;
-  grid-area: 1 2 1 2;
-  padding: 0 10px;
   width: 100%;
 }
-.MitInfo {
-  display: grid;
-  grid-area: 1 2 1 2;
-  padding: 0 10px;
-}
+
 .Miles {
   height: 20px;
   text-align: center;
   font-weight: 300;
   font-family: inherit;
 }
-#speed_label {
-  display: grid;
-  grid-area: 1 3 1 3;
-  padding: 0 10px;
-  width: 100%;
-  padding-right: 30%;
-}
-.SpeedInfo {
-  display: grid;
-  grid-area: 1 3 1 3;
-  padding: 0 10px;
-  justify-content: center;
-}
+
 .SpeedInfo span {
   height: fit-content;
   margin: 0;
@@ -132,7 +103,6 @@ h3 {
 }
 .RemoveFix {
   display: flex;
-  grid-area: 1 4 1 4;
   width: 20px;
   height: 20px;
   margin: auto 0;
@@ -146,10 +116,8 @@ h3 {
   font-size: 10px;
   font-weight: 300;
   cursor: pointer;
-}
-.RemoveFix.visbile {
-  visibility: visible;
-  opacity: 0.8;
+  flex-basis: 20px;
+  opacity: 0.6;
 }
 .RemoveFix:hover {
   opacity: 1;

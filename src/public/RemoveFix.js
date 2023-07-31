@@ -7,6 +7,10 @@ function RemoveFix(fixId) {
   let numberOfFixes = document.getElementsByClassName('card').length;
   if (numberOfFixes <= 1) {
     HideResetButton();
+    let remove_buttons = document.getElementsByClassName('RemoveFix')[0];
+    let remove_labels = document.getElementById('remove_label');
+    remove_buttons.style.display = 'none';
+    remove_labels.style.display = 'none';
   }
 }
 

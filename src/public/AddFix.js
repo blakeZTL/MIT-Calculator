@@ -27,4 +27,12 @@ add_fix.addEventListener('click', () => {
   container.appendChild(new_fix);
 
   reset_cards.style.display = 'block';
+  ExpandFirstCard();
 });
+
+function ExpandFirstCard() {
+  let value_labels = document.getElementById('remove_label');
+  let firstCard = document.getElementsByClassName('card')[0];
+  firstCard.getElementsByClassName('RemoveFix')[0].style.display = 'block';
+  value_labels.style.display = 'block';
+}

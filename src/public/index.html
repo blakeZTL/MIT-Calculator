@@ -29,15 +29,13 @@
       <h2 id="rate_value">0</h2>
     </div>
 
-    <div class="Headings">
+    <div class="container">
       <div class="ValueLabels">
         <h3 id="fix_label">Fix Name</h3>
         <h3 id="mit_label">MIT</h3>
         <h3 id="speed_label">Speed</h3>
+        <h3 id="remove_label" style="display: none"></h3>
       </div>
-    </div>
-
-    <div class="container">
       <div class="card" id="fix1">
         <div class="FixInfo">
           <input
@@ -96,7 +94,7 @@
         <button
           id="remove_fix"
           class="RemoveFix"
-          style="display: none"
+          style="display: none; opacity: 0.6"
           onclick="RemoveFix(this.closest('.card').id)"
           title="Remove This Fix"
         >
