@@ -1,6 +1,7 @@
 const container = document.getElementsByClassName('container')[0];
 const add_fix = document.getElementById('add_fix');
 const fix = document.getElementsByClassName('card')[0];
+const reset_cards = document.getElementById('reset_cards');
 
 let num_of_fixes = 1;
 
@@ -16,4 +17,6 @@ add_fix.addEventListener('click', () => {
     speedChecks[i].checked = false;
   }
   container.appendChild(new_fix);
+
+  reset_cards.style.visibility = 'visible';
 });

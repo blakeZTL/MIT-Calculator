@@ -23,6 +23,8 @@ function ResetCards() {
   ).then((value) => {
     if (value === 'Yes') {
       const fixElements = document.getElementsByClassName('card');
+      const resetCards = document.getElementById('reset_cards');
+      resetCards.style.visibility = 'hidden';
       while (fixElements.length > 1) {
         fixElements[1].remove();
       }
