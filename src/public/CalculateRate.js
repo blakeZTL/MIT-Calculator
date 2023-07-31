@@ -34,7 +34,10 @@ function CalculateRate(fix_data) {
         rate += 0.0;
     }
   });
-  document.getElementById('rate_value').innerHTML = rate;
+  let rate_value = document.getElementById('rate_value');
+  rate_value.innerHTML = rate;
+  rate_value.title = 'The calculated rates of the below selections';
+
   calc_data.forEach((fix) => {
     if (fix.Speed == 0) {
       fix.Speed = 'None';

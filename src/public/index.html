@@ -83,24 +83,37 @@
           class="RemoveFix"
           style="display: none"
           onclick="RemoveFix(this.closest('.card').id)"
+          title="Remove This Fix"
         >
           X
         </button>
       </div>
     </div>
     <div class="AddFix">
-      <button type="button" id="add_fix" class="AddFixButton">Add Fix</button>
+      <button
+        type="button"
+        id="add_fix"
+        class="AddFixButton"
+        title="Add a New Fix"
+      >
+        Add Fix
+      </button>
       <button
         type="button"
         id="reset_cards"
         class="ResetCards"
         onclick="ResetCards()"
         style="display: none"
+        title="Reset All Fixes"
       >
         Reset
       </button>
     </div>
-    <div id="calc_data" class="CalculatorData"></div>
+    <div
+      id="calc_data"
+      class="CalculatorData"
+      title="The Rate Calculations by Fix"
+    ></div>
     <script>
       if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('/sw.js', { scope: '/' });
