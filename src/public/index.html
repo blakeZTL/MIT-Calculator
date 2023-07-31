@@ -9,6 +9,20 @@
     <title>Mile-In-Trail Calculator</title>
   </head>
   <body>
+    <div class="background" style="display: none"></div>
+    <div class="popup-container" style="display: none">
+      <div class="popup-content">
+        <h2>Clear all Fixes</h2>
+        <p>
+          Selecting yes below will clear all fix data. Are you sure you want to
+          do this?
+        </p>
+        <span class="popup-btns"
+          ><button id="pop-btn-no" onclick="closePopup()">No</button>
+          <button id="pop-btn-yes" onclick="ResetCards()">Yes</button></span
+        >
+      </div>
+    </div>
     <h1>Mile-In-Trail Calculator</h1>
     <div class="Rate">
       <h2 id="rate_label">Calculated Rate:</h2>
@@ -103,7 +117,7 @@
         type="button"
         id="reset_cards"
         class="ResetCards"
-        onclick="ResetCards()"
+        onclick="openPopup()"
         style="display: none"
         title="Reset All Fixes"
       >

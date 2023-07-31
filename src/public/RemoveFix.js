@@ -11,40 +11,43 @@ function RemoveFix(fixId) {
 }
 
 function ResetCards() {
-  swal(
-    'Resetting Fixes',
-    'Are you sure you want to reset all fixes?',
-    'warning',
-    {
-      buttons: {
-        cancel: 'No',
-        catch: {
-          text: 'Yes',
-          value: 'Yes',
-        },
-      },
-    }
-  ).then((value) => {
-    if (value === 'Yes') {
-      const fixElements = document.getElementsByClassName('card');
-      HideResetButton();
-      while (fixElements.length > 1) {
-        fixElements[1].remove();
-      }
-      const fixInput = document.getElementsByClassName('FixInput')[0];
-      fixInput.value = '';
-      const speedChecks = document.getElementsByClassName('SpeedChecks');
-      for (let i = 0; i < speedChecks.length; i++) {
-        speedChecks[i].checked = false;
-      }
-      const miles = document.getElementsByClassName('Miles')[0];
-      miles.value = '0';
-      GatherData();
-    }
-  });
+  const fixElements = document.getElementsByClassName('card');
+  HideResetButton();
+  while (fixElements.length > 1) {
+    fixElements[1].remove();
+  }
+  const fixInput = document.getElementsByClassName('FixInput')[0];
+  fixInput.value = '';
+  const speedChecks = document.getElementsByClassName('SpeedChecks');
+  for (let i = 0; i < speedChecks.length; i++) {
+    speedChecks[i].checked = false;
+  }
+  const miles = document.getElementsByClassName('Miles')[0];
+  miles.value = '0';
+  GatherData();
+  closePopup();
 }
 
 function HideResetButton() {
   const resetCards = document.getElementById('reset_cards');
   resetCards.style.display = 'none';
 }
+
+const background = document.querySelector('.background');
+const popupContainer = document.querySelector('.popup-container');
+const closeBtn = document.querySelector('.close-btn');
+
+function openPopup() {
+  background.style.display = 'block';
+  popupContainer.style.display = 'block';
+}
+
+function closePopup() {
+  background.style.display = 'none';
+  popupContainer.style.display = 'none';
+}
+
+closeBtn.addEventListener('click', closePopup);
+
+// Optionally, close the popup when clicking on the background as well
+background.addEventListener('click', closePopup);
