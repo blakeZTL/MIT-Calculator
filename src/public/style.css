@@ -155,14 +155,12 @@ h3{
     opacity: 1;
     font-weight: 500;
 }
-.AddFix{
-    display: grid;
-    grid-area: 2 1 2 1;   
+.AddFix{   
     max-height: 40px;
     max-width: 80px; 
     margin: auto 0;
     justify-self: center;
-    
+    margin-top: 10px;
 }
 .AddFixButton{
     background-color: var(--Add-fill);
@@ -181,9 +179,27 @@ h3{
     opacity: 1;
     font-weight: 500;
 }
+.AddFixButton:active{
+    transform: scale(0.95);
+}
+#reset_cards{
+    display: flex;
+    width: 100%;
+    justify-self: right;
+    align-self: right;
+    margin-top: 10px;
+}
 .Rate{
     display: flex;
     font-weight: 300;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    padding: 0 10px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
 }
 #rate_value{
     padding-left: 10px;
