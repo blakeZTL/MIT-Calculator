@@ -48,6 +48,4 @@ function closePopup() {
 }
 
 closeBtn.addEventListener('click', closePopup);
-
-// Optionally, close the popup when clicking on the background as well
 background.addEventListener('click', closePopup);
