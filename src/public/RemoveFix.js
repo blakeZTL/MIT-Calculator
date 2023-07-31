@@ -5,3 +5,11 @@ function RemoveFix(fixId) {
   }
   GatherData();
 }
+
+function ResetFixes() {
+  const fixElements = document.getElementsByClassName('card');
+  while (fixElements.length > 1) {
+    fixElements[1].remove();
+  }
+  GatherData();
+}
