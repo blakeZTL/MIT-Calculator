@@ -4,6 +4,10 @@ function RemoveFix(fixId) {
     elementToRemove.remove();
   }
   GatherData();
+  let numberOfFixes = document.getElementsByClassName('card').length;
+  if (numberOfFixes <= 1) {
+    HideResetButton();
+  }
 }
 
 function ResetCards() {
@@ -23,8 +27,7 @@ function ResetCards() {
   ).then((value) => {
     if (value === 'Yes') {
       const fixElements = document.getElementsByClassName('card');
-      const resetCards = document.getElementById('reset_cards');
-      resetCards.style.display = 'none';
+      HideResetButton();
       while (fixElements.length > 1) {
         fixElements[1].remove();
       }
@@ -39,4 +42,9 @@ function ResetCards() {
       GatherData();
     }
   });
+}
+
+function HideResetButton() {
+  const resetCards = document.getElementById('reset_cards');
+  resetCards.style.display = 'none';
 }
