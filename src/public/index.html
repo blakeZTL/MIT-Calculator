@@ -26,7 +26,12 @@
     <div class="container">
       <div class="card" id="fix1">
         <div class="FixInfo">
-          <input type="text" class="FixInput" placeholder="Name of Fix" />
+          <input
+            type="text"
+            class="FixInput"
+            placeholder="Name of Fix"
+            onchange="GatherData()"
+          />
         </div>
         <div class="MitInfo">
           <select
@@ -76,7 +81,7 @@
         <button
           id="remove_fix"
           class="RemoveFix"
-          style="visibility: hidden"
+          style="display: none"
           onclick="RemoveFix(this.closest('.card').id)"
         >
           X
@@ -90,11 +95,12 @@
         id="reset_cards"
         class="ResetCards"
         onclick="ResetCards()"
-        style="visibility: hidden"
+        style="display: none"
       >
         Reset
       </button>
     </div>
+    <div id="calc_data" class="CalculatorData"></div>
     <script>
       if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('/sw.js', { scope: '/' });
@@ -128,5 +134,6 @@
       const app = initializeApp(firebaseConfig);
       const analytics = getAnalytics(app);
     </script>
+    <!--<script type="module" src="./script.js"></script>-->
   </body>
 </html>

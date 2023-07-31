@@ -24,10 +24,18 @@ function ResetCards() {
     if (value === 'Yes') {
       const fixElements = document.getElementsByClassName('card');
       const resetCards = document.getElementById('reset_cards');
-      resetCards.style.visibility = 'hidden';
+      resetCards.style.display = 'none';
       while (fixElements.length > 1) {
         fixElements[1].remove();
       }
+      const fixInput = document.getElementsByClassName('FixInput')[0];
+      fixInput.value = '';
+      const speedChecks = document.getElementsByClassName('SpeedChecks');
+      for (let i = 0; i < speedChecks.length; i++) {
+        speedChecks[i].checked = false;
+      }
+      const miles = document.getElementsByClassName('Miles')[0];
+      miles.value = '0';
       GatherData();
     }
   });

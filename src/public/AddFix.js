@@ -10,13 +10,15 @@ add_fix.addEventListener('click', () => {
   const new_fix = fix.cloneNode(true);
   new_fix.id = `fix${num_of_fixes}`;
   let remove_fix = new_fix.getElementsByClassName('RemoveFix')[0];
-  remove_fix.style.visibility = 'visible';
+  remove_fix.style.display = 'block';
   remove_fix.style.opacity = '0.6';
   let speedChecks = new_fix.getElementsByClassName('SpeedChecks');
   for (let i = 0; i < speedChecks.length; i++) {
     speedChecks[i].checked = false;
   }
+  let fixInput = new_fix.getElementsByClassName('FixInput')[0];
+  fixInput.value = '';
   container.appendChild(new_fix);
 
-  reset_cards.style.visibility = 'visible';
+  reset_cards.style.display = 'block';
 });
