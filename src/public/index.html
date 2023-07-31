@@ -85,13 +85,21 @@
     </div>
     <div class="AddFix">
       <button type="button" id="add_fix" class="AddFixButton">Add Fix</button>
-      <button type="button" id="reset_cards" class="ResetCards">Reset</button>
+      <button
+        type="button"
+        id="reset_cards"
+        class="ResetCards"
+        onclick="ResetCards()"
+      >
+        Reset
+      </button>
     </div>
     <script>
       if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('/sw.js', { scope: '/' });
       }
     </script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="SpeedRadios.js"></script>
     <script src="AddFix.js"></script>
     <script src="RemoveFix.js"></script>
